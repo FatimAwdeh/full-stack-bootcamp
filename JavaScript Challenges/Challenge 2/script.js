@@ -27,3 +27,10 @@ const needDriver = false;
 if(age < 18 || !hasDriverLicense || hasCar){
 console.log(!needDriver);
 }
+var role="admin";
+switch(role){
+    case (role):console.log( "You have read and write access for the data");
+    case(user):console.log("You have only read access for the data");
+    case(guest):console.log("You have no access for the data");
+    default:confirm.log("User role is not recoginized");
+}
