@@ -39,3 +39,7 @@ console.log(backtick);//prend une variable et donne la valeur du counter
 console.log(singleQuote);//donne la str comme elle est
 console.log(doubleQuote);//donne la str comme elle est
 console.log(tryThisAlso);//faire la calculation d'une variable d'expression
+let var1="ABC";
+let var2="DEF";
+let result="";
+console.log(result=var1+var2);
