@@ -1,1 +1,3 @@
-console.log('I am linked now!');
+//console.log('I am linked now!');
+let name="Fatima";
+alert(name);
