@@ -43,3 +43,16 @@ let var1="ABC";
 let var2="DEF";
 let result="";
 console.log(result=var1+var2);
+let result0=5 + 3 * 2;
+console.log("Result0 est" + result0);
+let result1=10 / 2 + 3 ;
+console.log("Result1 est" + result1);
+let result2=10 / (2 + 3) ;
+console.log("Result2 est" + result2);
+if (result1 > result2){
+    console.log("result1 plus grand");
+}
+else{
+    console.log("result2 plus grand");
+
+}
