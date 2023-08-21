@@ -47,4 +47,14 @@ console.log("Addition:", result);
 
 
 
-
+var globalVar;
+globalVar=3;
+function squareNumber(number){
+    const square = number * number;
+    let localVar;
+    localVar=7;
+    console.log(globalVar);//il prend globalVar inside the function
+    return square;
+}
+console.log(localVar);//but il ne prend pas localVar outside the function
+console.log(squareNumber(3));
