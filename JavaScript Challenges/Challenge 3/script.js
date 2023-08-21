@@ -51,14 +51,13 @@ var globalVar;
 globalVar=3;
 function squareNumber(number){
     const square = number * number;
-    let localVar;
-    localVar=7;
-    console.log(globalVar);//il prend globalVar inside the function
+    //let localVar;
+    //localVar=7;
+    //console.log(globalVar);//il prend globalVar inside the function
     return square;
 }
 //console.log(localVar);//but il ne prend pas localVar outside the function
 console.log(squareNumber(3));
-
 
 
 
@@ -96,3 +95,24 @@ for (var i = 0; i < favoriteFruits.length; i++) {
       console.log(fruit);
     }
   }
+
+
+
+
+  /*function processArray(array , autreFunction){
+    for (let i=0 ; i < array.length ; i++){
+        autreFunction(array[i]);
+    }
+  }
+  var arOfNb=[1,3,7,8,5,4];
+  processArray(arOfNb,squareNumber(4));*/
+
+
+
+  /*function multiplier(num){
+    return function aa(nb){
+        return num * nb;
+    }
+  }
+  console.log(multiplier(3));
+  console.log(aa(4));*/
