@@ -56,5 +56,43 @@ function squareNumber(number){
     console.log(globalVar);//il prend globalVar inside the function
     return square;
 }
-console.log(localVar);//but il ne prend pas localVar outside the function
+//console.log(localVar);//but il ne prend pas localVar outside the function
 console.log(squareNumber(3));
+
+
+
+
+let n=1;
+while(n < 11){
+    console.log(n);
+    n++;
+}
+
+let nb=1;
+do{
+    if(nb % 2 == 0)
+    console.log(nb);
+    nb++;
+}while( nb < 11  );
+
+
+
+
+
+/*let fruits = ['Apple', 'Banana', 'Grape', 'Watermelon', 'Pineapple', 'Pear', 'Cherry'];
+for(let i=0; i<fruits.length; i++){
+    for (let j=0; j=fruits[i].length; j++){
+        if(j < 4)
+        fruits.splice(fruits[i],1);
+    }
+}
+console.log(fruits);*/
+
+
+let favoriteFruits = ['Apple', 'Banana', 'Grape', 'Watermelon', 'Pineapple', 'Pear', 'Cherry'];
+for (var i = 0; i < favoriteFruits.length; i++) {
+    var fruit = favoriteFruits[i];
+    if (fruit.length > 5) {
+      console.log(fruit);
+    }
+  }
