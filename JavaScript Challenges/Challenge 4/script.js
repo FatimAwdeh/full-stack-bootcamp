@@ -33,8 +33,20 @@ console.log(additionalInfo);
 //console.log(fullInfo);
 
 const fullInfo = {
-  ...personalInfo,
-  ...additionalInfo
+  personalInfo,
+  additionalInfo
 };
 
 console.log(fullInfo);
+
+
+const [firstNum, secondNum, thirdNum]=fiveNumbers;
+console.log(firstNum);
+console.log(secondNum);
+console.log(thirdNum);
+
+
+const { name:personName, location:personLocation, nationality:personNationality } = personalInfo;
+console.log(personName);
+console.log(personLocation);
+console.log(personNationality);
