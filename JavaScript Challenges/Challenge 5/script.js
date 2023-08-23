@@ -75,3 +75,46 @@ console.log('Email:', email);
 nameInput.value = '';
 emailInput.value = '';
   });
+
+
+const originalDiv = document.getElementById('original');
+const clonedDiv = originalDiv.cloneNode(true);
+const h1Element = clonedDiv.querySelector('p');
+h1Element.textContent = 'Cloned';
+document.body.appendChild(clonedDiv);
+
+
+
+clonedDiv.style.display = 'none';
+document.body.appendChild(clonedDiv);
+const cloneButton = document.getElementById('clone-btn');
+cloneButton.addEventListener('click', function() {
+  if (clonedDiv.style.display === 'none') {
+    clonedDiv.style.display = 'block';
+  } else {
+    clonedDiv.style.display = 'none';
+  }
+});
+
+
+const removeButton = document.createElement('button');
+removeButton.textContent = 'Remove Header';
+document.body.appendChild(removeButton);
+removeButton.addEventListener('click', function() {
+  const header = document.querySelector('header');
+  if (header) {
+    header.remove();
+  }
+});
+
+
+function insertBeforeFooter(element) {
+    const footer = document.querySelector('footer');
+    if (footer) {
+      footer.parentNode.insertBefore(element, footer);
+    }
+  }
+const newElement = document.createElement('div');
+  newElement.textContent = 'New Element';
+  
+  insertBeforeFooter(newElement);
