@@ -56,3 +56,74 @@ setTimeout(function() {
     .catch((error) => {
       console.log("Error:", error);
     });
+
+
+
+//step 2
+function simulateNetworkRequest() {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        const isSuccess = Math.random() < 0.8; 
+        if (isSuccess) {
+          resolve("Network request successful!");
+        } else {
+          reject(new Error("Network request failed!"));
+        }
+      }, 2000); 
+    });
+  }
+    simulateNetworkRequest()
+    .then((response) => {
+      console.log(response); 
+    })
+    .catch((error) => {
+      console.log(error); 
+    });
+  
+
+
+
+
+    function simulateNetworkRequest() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            const randomValue = Math.random();
+            if (randomValue < 0.5) {
+              resolve("Data fetched successfully!");
+            } else {
+              reject("Network Error!");
+            }
+          }, 3000);
+        });
+      }
+      
+      async function fetchData() {
+        try {
+          const response = await simulateNetworkRequest();
+          console.log("Success:", response);
+        } catch (error) {
+          console.log("Error:", error);
+        }
+      }
+      
+      fetchData();
+
+
+
+
+
+
+      async function fetchPost() {
+        try {
+          const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+          if (!response.ok) {
+            throw new Error('Network response was not ok.');
+          }
+          const data = await response.json();
+          console.log('Post:', data);
+        } catch (error) {
+          console.log('Error:', error.message);
+        }
+      }
+      
+      fetchPost();
