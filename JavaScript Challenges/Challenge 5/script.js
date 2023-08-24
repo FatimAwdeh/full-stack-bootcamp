@@ -31,7 +31,7 @@ button.addEventListener('mouseout', function() {
 });
 
 
-const original = document.getElementById('original');
+const original = document.getElementById('buttonContainer');
 original.addEventListener('click', function(event) {
   if (original.contains(event.target)) {
     console.log(event.target.textContent);
