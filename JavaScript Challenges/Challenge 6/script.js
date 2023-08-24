@@ -127,3 +127,118 @@ function simulateNetworkRequest() {
       }
       
       fetchPost();
+
+
+
+      //step 3 
+      async function fetchMultipleResources() {
+        try {
+          const urls = [
+            'https://jsonplaceholder.typicode.com/posts/1',
+            'https://jsonplaceholder.typicode.com/posts/2',
+            'https://jsonplaceholder.typicode.com/posts/3'
+          ];
+      
+          const requests = urls.map(url => fetch(url));
+      
+          const responses = await Promise.all(requests);
+      
+          const data = await Promise.all(responses.map(response => response.json()));
+      
+          console.log('Data:', data);
+        } catch (error) {
+          console.log('Error:', error);
+        }
+      }
+      
+      fetchMultipleResources();
+
+
+
+
+      async function fetchMultiplePosts() {
+        try {
+          const postIds = [1, 2, 3];
+          const requests = postIds.map(id =>
+            fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+          );
+      
+          const responses = await Promise.all(requests);
+      
+          const data = await Promise.all(
+            responses.map(response => response.json())
+          );
+      
+          console.log('Combined Data:', data);
+        } catch (error) {
+          console.log('Error:', error);
+        }
+      }
+      
+      fetchMultiplePosts();
+
+      
+
+
+      async function processPromisesSequentially(promises) {
+        for (const promise of promises) {
+          try {
+            const result = await promise;
+            console.log('Promise resolved:', result);
+          } catch (error) {
+            console.log('Promise rejected:', error);
+          }
+        }
+      }
+      
+      const promises = [
+        Promise.resolve('First Promise'),
+        Promise.reject(new Error('Second Promise Error')),
+        Promise.resolve('Third Promise')
+      ];
+      
+      processPromisesSequentially(promises);
+
+      
+
+
+      async function fetchPostsSequentially() {
+        try {
+          const postIds = [4, 5, 6, 7, 8];
+          for (const postId of postIds) {
+            const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`);
+            if (!response.ok) {
+              throw new Error(`Failed to fetch post ${postId}`);
+            }
+            const post = await response.json();
+            console.log('Post:', post);
+          }
+        } catch (error) {
+          console.log('Error:', error);
+        }
+      }
+      
+      fetchPostsSequentially();
+
+
+
+
+
+      async function fetchPostsSequentially() {
+        const postIds = [4, 5, 6, 7, 8];
+        for (const postId of postIds) {
+          try {
+            const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`);
+            if (!response.ok) {
+              throw new Error(`Failed to fetch post ${postId}`);
+            }
+            const post = await response.json();
+            console.log('Post:', post);
+          } catch (error) {
+            console.log('Error:', error);
+          }
+        }
+      }
+      
+      fetchPostsSequentially();
+      
