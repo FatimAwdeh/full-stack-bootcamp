@@ -94,3 +94,49 @@ const quotesArray = [
       "Hell, there are no rules here-- we're trying to accomplish something.",
   },
 ];
+
+
+
+//STEP 2 && 3 
+for (let quote of quotesArray ) {
+
+const blockquote = document.createElement('blockquote');
+const quoteText = document.createElement('p');
+quoteText.textContent = `${quote.content}` /*I think that beauty can injure you to death. It can cause an injury that can 
+never be cured. Or it can so traumatise you, your life changes direction. The 
+beauty of the harmony of nature that is forever lost, or a daily rite that you 
+perform, or diving into the sea for a swim. Those experiences are going to 
+mark you.*/ ;
+const authorDiv = document.createElement('div');
+authorDiv.className = 'author';
+const authorCite = document.createElement('cite');
+authorCite.textContent = quote.author;
+authorDiv.innerHTML = '&mdash; ';
+authorDiv.appendChild(authorCite);
+blockquote.appendChild(quoteText);
+blockquote.appendChild(authorDiv);
+const quotes = document.getElementById('quotes');
+quotes.appendChild(blockquote);
+}
+
+
+
+//STEP 4 
+const filterInput = document.getElementById('authorSearch');
+const quotes = document.getElementById('quotes');
+
+filterInput.addEventListener('input', () => {
+  const filterValue = filterInput.value.toLowerCase();
+
+  for (let i = 0; i < quotesArray.length; i++) {
+    const quote = quotesArray[i];
+    const authorName = quote.author.toLowerCase();
+    const authorCite = quotes.getElementsByTagName('cite')[i];
+
+    if (authorName.includes(filterValue)) {
+      authorCite.parentNode.parentNode.style.display = 'block';
+    } else {
+      authorCite.parentNode.parentNode.style.display = 'none';
+    }
+  }
+});

@@ -4,7 +4,7 @@ setTimeout(function() {
   }, 5000);
 
 
-  /*function updateClock() {
+  function updateClock() {
     const currentTime = new Date();
     const hours = currentTime.getHours();
     const minutes = currentTime.getMinutes();
@@ -14,7 +14,7 @@ setTimeout(function() {
     console.log(formattedTime);
   }
   
-  setInterval(updateClock, 1000);*/
+  setInterval(updateClock, 1000);
 
 
 
