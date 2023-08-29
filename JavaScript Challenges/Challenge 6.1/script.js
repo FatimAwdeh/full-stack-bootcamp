@@ -22,3 +22,19 @@ function delay(milliseconds) {
     .catch(error => {
         console.error(`Error:`, error);
     });
+
+
+    //STEP 3 
+
+    async function fetch1() {
+        try {
+          const response = await fetch("https://uselessfacts.jsph.pl/random.json?language=en");
+          const data = await response.json();
+          console.log(data/*.text*/);
+        } catch (error) {
+          console.error('Error:', error);
+        }
+      }
+      
+      fetch1();
+      
