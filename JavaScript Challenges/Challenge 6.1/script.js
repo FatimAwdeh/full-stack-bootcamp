@@ -38,3 +38,20 @@ function delay(milliseconds) {
       
       fetch1();
       
+//STEP 4 
+
+async function fetch2() {
+    try {
+        let [data0, data1, data2] = await Promise.all([
+            fetch('https://dog.ceo/api/breeds/image/random').then(response => response.json()),
+            fetch('https://dog.ceo/api/breeds/image/random').then(response => response.json()),
+            fetch('https://dog.ceo/api/breeds/image/random').then(response => response.json())
+        ]);
+
+        console.log(data0, data1, data2);
+    } catch (error) {
+        console.log("Error:", error);
+    }
+}
+
+fetch2();
